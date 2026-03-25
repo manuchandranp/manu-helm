@@ -3,4 +3,4 @@ steps:
   inputs:
     jfrogPlatformConnection: 'artifacts-claas-com-containertechnology-jfrog-platform'
     command: |
-        jf helm repo add mau-helm https://manuaccess.jfrog.io/artifactory/api/helm/mau-helm --username $JF_USER --password $JF_PASSWORD
+        jf helm repo add mau-helm https://manuaccess.jfrog.io/artifactory/api/helm/mau-helm --username $JF_USER --password ${JF_PASSWORD:-$JF_ACCESS_TOKEN}
