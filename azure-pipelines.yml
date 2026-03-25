@@ -3,4 +3,4 @@ steps:
   inputs:
     jfrogPlatformConnection: 'artifacts-claas-com-containertechnology-jfrog-platform'
     command: |
-      jf helm repo add mau-helm https://manuaccess.jfrog.io/artifactory/api/helm/mau-helm --server-id $(jf c show --format json | jq -r '.[0].serverId')
+      jf helm repo add mau-helm https://manuaccess.jfrog.io/artifactory/api/helm/mau-helm --server-id $JF_ENV_ID
