@@ -3,4 +3,8 @@ steps:
   inputs:
     jfrogPlatformConnection: 'artifacts-claas-com-containertechnology-jfrog-platform'
     command: |
-        jf helm repo add mau-helm https://manuaccess.jfrog.io/artifactory/api/helm/mau-helm --username $JF_USER --password ${JF_PASSWORD:-$JF_ACCESS_TOKEN}
+      # 1. Get the current dynamic server ID
+      CURRENT_SERVER=$(/opt/hostedtoolcache/jf/2.89.0/x64/jf c show --format json | jq -r '.[0].serverId')
+      
+      # 2. Run the helm command using that ID explicitly
+      jf helm repo add mau-helm https://manuaccess.jfrog.io/artifactory/api/helm/mau-helm --server-id $CURRENT_SERVER
