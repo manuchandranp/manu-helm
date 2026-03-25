@@ -4,4 +4,4 @@ steps:
     jfrogPlatformConnection: 'artifacts-claas-com-containertechnology-jfrog-platform'
     command: |
       jf helm registry login manuaccess.jfrog.io
-      jf helm pull oci://manuaccess.jfrog.io/manu-helmoci/ingress-nginx/ingress-nginx
+      jf helm pull oci://manuaccess.jfrog.io/manu-helmoci/nginx/charts/nginx-ingress 
