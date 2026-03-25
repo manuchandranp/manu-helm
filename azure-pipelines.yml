@@ -3,4 +3,4 @@ steps:
   inputs:
     jfrogPlatformConnection: 'artifacts-claas-com-containertechnology-jfrog-platform'
     command: |
-      jf helm pull oci://manuaccess.jfrog.io/manu-helmoci/bitnamicharts/nginx --version 19.0.0
+      jf helm repo add mau-helm https://manuaccess.jfrog.io/artifactory/api/helm/mau-helm
