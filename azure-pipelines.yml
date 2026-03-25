@@ -2,4 +2,6 @@ steps:
 - task: JfrogCliV2@1
   inputs:
     jfrogPlatformConnection: 'artifacts-claas-com-containertechnology-jfrog-platform'
-    command: 'jf helm pull oci://manuaccess.jfrog.io/manu-helmoci/ingress-nginx/charts/ingress-nginx --version v4.13.4'
+    command: |
+      jf helm registry login manuaccess.jfrog.io
+      jf helm pull oci://manuaccess.jfrog.io/manu-helmoci/ingress-nginx/charts/ingress-nginx --version v4.13.4
